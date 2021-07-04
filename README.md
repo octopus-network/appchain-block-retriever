@@ -1,9 +1,9 @@
 # 一 导出备份文件
-
+```
 ./node-template export-blocks --dev --from 0 --to 0 0.data --pruning=archive
 ./node-template export-blocks --dev --from 1 --to 1 1.data --pruning=archive
 ./node-template export-blocks --dev --from 2 --to 2 2.data --pruning=archive
-
+```
 导出成功输出
 
 ```
