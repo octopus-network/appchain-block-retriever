@@ -10,6 +10,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@open-rpc/client-js": "^1.7.0",
         "@textury/ardb": "^1.1.1",
         "arweave": "^1.10.15"
     }
