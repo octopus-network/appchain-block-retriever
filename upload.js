@@ -19,8 +19,8 @@ async function upload(index) {
         let data = fs.readFileSync('./' + index + '.data');
 
         let transaction = await arweave.createTransaction({ data: data }, key);
-        transaction.addTag('chain-id', '9999');
-        transaction.addTag('block-high', index.toString());
+        transaction.addTag('ChaidId', '9999');
+        transaction.addTag('Height', index.toString());
         //todo add hash to tag
 
         await arweave.transactions.sign(transaction, key);

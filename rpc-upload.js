@@ -26,14 +26,16 @@ const arweave = Arweave.init({
     protocol: 'https'
 });
 
-async function upload(hash, block_hight) {
+async function upload(block_hight) {
+    const hash = await client.request({ method: "chain_getBlockHash", params: [block_hight] });
+    console.log("#### hash");
     const result = await client.request({ method: "chain_getBlock", params: [hash] });
     console.log("#####result is ", result);
 
     let data = JSON.stringify(result)
     let transaction = await arweave.createTransaction({ data: data }, key);
-    transaction.addTag('chain-id', '9999');
-    transaction.addTag('block-high', block_hight);
+    transaction.addTag('ChaidId', '9999');
+    transaction.addTag('Height', block_hight);
     //todo add hash to tag
 
     await arweave.transactions.sign(transaction, key);
@@ -46,4 +48,5 @@ async function upload(hash, block_hight) {
     }
 }
 
-upload('0x1ff2a60f3160e59abfef2c5dd142c6a3fa6aada27d815cffb5b7b89a6e81145a', 9)
+upload(0)
+upload(1)
