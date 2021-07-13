@@ -37,7 +37,9 @@ https://viewblock.io/arweave/address/49d9OTVzaTE_A_jbelsu0nHFEsvbPWR0YXH_rC8roj4
 
 # 五 下载备份文件
 
-node down-bak-file.js
+node down-bak-file.js 9999 1
+9999 表示 ChaidId
+1 表示要下载的最后目标区块高度
 会下载并生成备份文件，block.bak
 
 # 六 导入 substrate
